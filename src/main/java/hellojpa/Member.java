@@ -13,15 +13,23 @@ import javax.persistence.Id;
 public class Member {
 
     @Id
-    private Long Id;
+    private Long id;
     private String name;
 
+    protected Member(){
+    }
+
+    public Member(Long id, String name){
+        this.id = id;
+        this.name = name;
+    }
+
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        id = id;
     }
 
     public String getName() {
