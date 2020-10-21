@@ -7,5 +7,6 @@ package hellojpa;
  * Blog : https://blog.naver.com/gkswndks123
  * Github : https://github.com/gatsjy
  */
-public class RoleType {
+public enum RoleType {
+    USER, ADMIN
 }
