@@ -32,13 +32,25 @@ public class JpaMain {
          *  - JPQL 쿼리 실행 - 플러시 자동 호출
          */
         try{
-            // 영속 엔티티 조회
-            Member member = new Member(200L, "member200");
-            em.persist(member);
+            Member member1 = new Member();
+            member1.setUsername("A");
 
-            em.flush();
+            Member member2 = new Member();
+            member2.setUsername("B");
 
-            System.out.println("=======================");
+            Member member3 = new Member();
+            member3.setUsername("C");
+
+            System.out.println("=================");
+            em.persist(member1); // 1, 51
+            em.persist(member2); //MEM
+            em.persist(member3); //MEM
+            System.out.println("=================");
+            System.out.println("member1.id = " +member1.getId());
+            System.out.println("member2.id = " +member2.getId());
+            System.out.println("member3.id = " +member3.getId());
+            System.out.println("=================");
+
             tx.commit();
         }catch (Exception e){
             tx.rollback();
